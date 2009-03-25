@@ -1,0 +1,77 @@
+2009-03-25  Jonathan Yu <frequency@cpan.org>
+
+	- Changed version number to 1.0 for release
+	- Updated META.yml and Build.PL with prerequisites
+
+2009-03-25  Jonathan Yu <frequency@cpan.org>
+
+	- Added svn:keywords for *t files
+	- Updated MANIFEST file
+
+2009-03-25  Jonathan Yu <frequency@cpan.org>
+
+	- Added stub POD documentation for PP.pm
+	- Added a test for Math::Random::ISAAC falling back (ie, ignoring XS even if installed)
+	- Added tests for exceptions
+	- Coverage is almost 100% now :-)
+
+	---------------------------- ------ ------ ------ ------ ------ ------ ------
+	File                           stmt   bran   cond    sub    pod   time  total
+	---------------------------- ------ ------ ------ ------ ------ ------ ------
+	.../lib/Math/Random/ISAAC.pm   96.2   87.5    n/a  100.0  100.0    0.6   95.5
+	...b/Math/Random/ISAAC/PP.pm  100.0  100.0    n/a  100.0  100.0   99.4  100.0
+	Total                          99.5   90.0    n/a  100.0  100.0  100.0   99.2
+
+2009-03-25  Jonathan Yu <frequency@cpan.org>
+
+	- Added a statement of purpose, corrected a POD mistake
+	- Added a README file
+	- Skip the t/01memory.t memory leak test if running with Devel::Cover
+
+2009-03-25  Jonathan Yu <frequency@cpan.org>
+
+	- Added test for memory leak detection
+	- Added test to ensure generated distribution is uniform
+	- Updated META.yml, MANIFEST and Build.PL parameters accordingly
+
+2009-03-24  Jonathan Yu <frequency@cpan.org>
+
+	Test that the distribution produced is uniform on [0,1]. Uses Statistics::Test::RandomWalk
+
+2009-03-21  Jonathan Yu <frequency@cpan.org>
+
+	- Modified pod coverage test (added a test plan)
+	- Added back generated_by (though I end up tweaking it by hand due to the version problem)
+
+2009-03-20  Jonathan Yu <frequency@cpan.org>
+
+	- Disable warning about functions that look like builtins (rand, irand), since they are methods
+	- Added stub POD for DESCRIPTION, SUPPORT in PP.pm
+	- Changed variable names because $a, $b are reserved by 'sort'
+
+2009-03-20  Jonathan Yu <frequency@cpan.org>
+
+	- Added lots of documentation
+	- Clarified the LICENSE - in particular, removed the (C) symbol to remove ambiguity
+
+2009-03-20  Jonathan Yu <frequency@cpan.org>
+
+	- Added a MANIFEST file
+	- Added strict/warnings to ISAAC.pm
+	- Added a version and some comments for PP.pm
+
+2009-03-20  Jonathan Yu <frequency@cpan.org>
+
+	Update Build.PL (I was being lazy and inadvertently copied and pasted it without editing)
+
+2009-03-20  Jonathan Yu <frequency@cpan.org>
+
+	- Initial commit of the PurePerl interface (Math::Random::ISAAC and Math::Random::ISAAC::PP)
+
+2009-03-17  Jonathan Yu <frequency@cpan.org>
+
+	- Added Math::Random::ISAAC for the ISAAC Pure-Perl distribution
+
+;; Local Variables:
+;; coding: utf-8
+;; End:

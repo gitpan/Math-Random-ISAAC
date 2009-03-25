@@ -1,0 +1,49 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.55.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 0da14c7e4988c50d7b06ebf7cceb990a9b1d9569 Build.PL
+SHA1 67eac17189db6f7e4c5fe695506c27713d3efde9 Changes
+SHA1 c2c211d6a82e2aa2653879198d2bdf5a7fc552c2 LICENSE
+SHA1 dacff8f9495161e7c51b3df90ebbb5bcc41f3085 MANIFEST
+SHA1 c4c013dae36ac310c895e97cd7e908375a8469d7 MANIFEST.SKIP
+SHA1 e817515de9438dd7f69afcf5d95f497575232d28 META.yml
+SHA1 7cfa2f7bdb9c7494ceb0f3260077453c41deb412 Makefile.PL
+SHA1 1d31d19925bbb7f26f6a42e0d0dd9b1e23edd470 README
+SHA1 fc673042536da2b2c680f6bee2b41253dc335ff1 lib/Math/Random/ISAAC.pm
+SHA1 0e460c2cd8841134c33479dfec87b2b1f53aca14 lib/Math/Random/ISAAC/PP.pm
+SHA1 e9f33ecc5ac919cf8689be867d2dad6ba27fea8d t/00signature.t
+SHA1 92307bdec05f85890ffd88a6b706060997439cc4 t/01compile.t
+SHA1 3a6791ccd3a51ec93eed79bd1010c48d81f4ac41 t/01critic.rc
+SHA1 96f0e8786499a4f4ff7e854597c269380fdf9978 t/01critic.t
+SHA1 2b8f58486967c1e90e6e0a778fe771877fc41c79 t/01kwalitee.t
+SHA1 d1da98822c749786afc8d8ff08035ee91b43e9c2 t/01manifest.t
+SHA1 783db9255ba65f358fa1286ca2bf3b7ef6db2b7b t/01memory.t
+SHA1 3eeb8c67de69bc7bbc1cdd8d1703185d178d7500 t/01meta.t
+SHA1 6953269ca8eca41d267778f5dba911cf88cd7dad t/01min-perl.t
+SHA1 c4c729d2b375c888af7dbfc90576ae222c5d69fc t/01pod-coverage.t
+SHA1 b26e5a92f1a52d3f59e2bcf715ff47154536a353 t/01pod.t
+SHA1 9fdee922f49354b32e93218dfdbfda07bc15b648 t/01portability.t
+SHA1 2c86f8a4366ec13951c6136c6b27fc8825bc765f t/02sequence.t
+SHA1 7b0c44edf66e492a90b5d99a022c6de260a9397a t/03uniform.t
+SHA1 d522e91a61f6969360d792dd01ef55d8802aa4f8 t/04fallback.t
+SHA1 c700f62e2daa0213ecc69379a8a8f6ee27b3b800 t/05exceptions.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (GNU/Linux)
+
+iEYEARECAAYFAknKo80ACgkQYYN9T93mai9HCQCeLg2nCZmA9aiUGRmta/q6mbgp
+9BoAoLp/58pnMSrdZRcuRalPVnce2Ne2
+=4n6X
+-----END PGP SIGNATURE-----
