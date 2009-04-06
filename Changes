@@ -1,3 +1,16 @@
+2009-04-04  Jonathan Yu <frequency@cpan.org>
+
+	- Updated version numbers for META.yml and Math::Random::ISAAC
+	- Fixed the PurePerl algorithm to mask out high bits for 64-bit systems, so as to be portable
+
+2009-04-03  Jonathan Yu <frequency@cpan.org>
+
+	swapped $got and $expected values for is()
+
+2009-04-03  Jonathan Yu <frequency@cpan.org>
+
+	Changed ok() to is() to provide more meaningful output
+
 2009-03-25  Jonathan Yu <frequency@cpan.org>
 
 	- Changed version number to 1.0 for release

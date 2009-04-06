@@ -5,7 +5,7 @@
 #
 # By Jonathan Yu <frequency@cpan.org>, 2009. All rights reversed.
 #
-# $Id: 02sequence.t 5724 2009-03-21 03:52:51Z FREQUENCY@cpan.org $
+# $Id: 02sequence.t 5945 2009-04-04 03:03:36Z FREQUENCY@cpan.org $
 #
 # This package and its contents are released by the author into the
 # Public Domain, to the full extent permissible by law. For additional
@@ -147,5 +147,5 @@ plan tests => scalar(@results);
 my $rng = Math::Random::ISAAC::PP->new();
 
 foreach my $num (@results) {
-  ok($num == $rng->irand());
+  is($rng->irand(), $num);
 }
