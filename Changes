@@ -1,3 +1,36 @@
+2009-04-23  Jonathan Yu <frequency@cpan.org>
+
+	One last oopsie, added a wrong examples file
+
+2009-04-23  Jonathan Yu <frequency@cpan.org>
+
+	Updated MANIFEST file
+
+2009-04-23  Jonathan Yu <frequency@cpan.org>
+
+	Updated version information
+
+2009-04-23  Jonathan Yu <frequency@cpan.org>
+
+	- Rewrote docs a bit
+	- Added example scripts
+	- Removed Pod::Usage dependency
+
+2009-04-10  Jonathan Yu <frequency@cpan.org>
+
+	Updated MANIFEST file
+
+2009-04-10  Jonathan Yu <frequency@cpan.org>
+
+	- A few trivial changes with commenting and formatting.
+	- Moved calls to $self->{randa} to outside the for loop for performance
+
+2009-04-06  Jonathan Yu <frequency@cpan.org>
+
+	- Changed pod-coverage to test all files
+	- Bumped version number to 1.0.2
+	- Moved memory test to an 02* test, because 01compile needs to be successful first
+
 2009-04-04  Jonathan Yu <frequency@cpan.org>
 
 	- Updated version numbers for META.yml and Math::Random::ISAAC

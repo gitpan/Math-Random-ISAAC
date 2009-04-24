@@ -5,7 +5,7 @@
 #
 # By Jonathan Yu <frequency@cpan.org>, 2009. All rights reversed.
 #
-# $Id: 01pod-coverage.t 5725 2009-03-21 04:32:17Z FREQUENCY@cpan.org $
+# $Id: 01pod-coverage.t 6045 2009-04-07 02:34:58Z FREQUENCY@cpan.org $
 #
 # This package and its contents are released by the author into the
 # Public Domain, to the full extent permissible by law. For additional
@@ -25,6 +25,4 @@ if ($@) {
   plan skip_all => 'Test::Pod::Coverage required to test POD Coverage';
 }
 
-plan tests => 1;
-
-pod_coverage_ok('Math::Random::ISAAC');
+all_pod_coverage_ok();
