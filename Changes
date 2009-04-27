@@ -1,3 +1,16 @@
+2009-04-26  Jonathan Yu <frequency@cpan.org>
+
+	- Updated version to 1.0.4
+
+2009-04-26  Jonathan Yu <frequency@cpan.org>
+
+	- Added some more tests for fallback functionality; I believe having 'use' for ISAAC meant that it would be put in a BEGIN{} block, which means selection happens before Test::Without::Module is even loaded (this was fixed by changing to require in an eval)
+	-> Added a test to ensure the module was compiled/loaded, then check if $Math::Random::ISAAC::DRIVER is defined first
+
+2009-04-24  Jonathan Yu <frequency@cpan.org>
+
+	Added Build.bat to MANIFEST.SKIP for Win32 builds...
+
 2009-04-23  Jonathan Yu <frequency@cpan.org>
 
 	One last oopsie, added a wrong examples file
