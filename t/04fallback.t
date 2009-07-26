@@ -3,13 +3,7 @@
 # t/04fallback.t
 #  Tests use of the Pure Perl interface
 #
-# By Jonathan Yu <frequency@cpan.org>, 2009. All rights reversed.
-#
-# $Id: 04fallback.t 6693 2009-04-26 22:57:21Z FREQUENCY@cpan.org $
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: 04fallback.t 8166 2009-07-22 19:54:15Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;

@@ -3,13 +3,7 @@
 # t/01memory.t
 #  Tests that there are no memory leaks
 #
-# By Jonathan Yu <frequency@cpan.org>, 2009. All rights reversed.
-#
-# $Id: 02memory.t 6045 2009-04-07 02:34:58Z FREQUENCY@cpan.org $
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: 02memory.t 8166 2009-07-22 19:54:15Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;

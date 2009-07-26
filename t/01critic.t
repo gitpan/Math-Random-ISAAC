@@ -3,13 +3,7 @@
 # t/01critic.t
 #  Test the distribution using Perl::Critic for guidelines
 #
-# By Jonathan Yu <frequency@cpan.org>, 2009. All rights reversed.
-#
-# $Id: 01critic.t 5715 2009-03-20 14:22:51Z FREQUENCY@cpan.org $
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: 01critic.t 8210 2009-07-25 19:59:36Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;
@@ -17,15 +11,20 @@ use warnings;
 use Test::More;
 use File::Spec;
 
-unless ($ENV{TEST_AUTHOR}) {
-  plan(skip_all => 'Set TEST_AUTHOR to enable module author tests');
+unless ($ENV{RELEASE_TESTING}) {
+  plan skip_all => 'Author tests not required for installation';
 }
 
-eval {
-  require Test::Perl::Critic;
-};
-if ($@) {
-  plan(skip_all => 'Test::Perl::Critic required to critique code');
+my %MODULES = (
+  'Test::Perl::Critic'  => 1.01,
+  'Perl::Critic'        => 1.098,
+);
+
+while (my ($module, $version) = each %MODULES) {
+  eval "use $module $version";
+  if ($@) {
+    die 'Could not load release-testing module ' . $module;
+  }
 }
 
 my $rcfile = File::Spec->catfile('t', '01critic.rc');

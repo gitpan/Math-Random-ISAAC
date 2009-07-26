@@ -1,14 +1,8 @@
 # Math::Random::ISAAC
-#  An interface that automagically selects the XS or Pure Perl
-#  port of the ISAAC Pseudo-Random Number Generator
+#  An interface that automagically selects the XS or Pure Perl port of the
+#  ISAAC Pseudo-Random Number Generator
 #
-# $Id: ISAAC.pm 6696 2009-04-26 23:27:08Z FREQUENCY@cpan.org $
-#
-# By Jonathan Yu <frequency@cpan.org>, 2009. All rights reversed.
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: ISAAC.pm 8224 2009-07-26 00:14:03Z FREQUENCY@cpan.org $
 
 package Math::Random::ISAAC;
 
@@ -22,11 +16,11 @@ Math::Random::ISAAC - Perl interface to the ISAAC PRNG Algorithm
 
 =head1 VERSION
 
-Version 1.0.4 ($Id: ISAAC.pm 6696 2009-04-26 23:27:08Z FREQUENCY@cpan.org $)
+Version 1.0.5 ($Id: ISAAC.pm 8224 2009-07-26 00:14:03Z FREQUENCY@cpan.org $)
 
 =cut
 
-use version; our $VERSION = qv('1.0.4');
+use version; our $VERSION = qv('1.0.5');
 
 our $DRIVER = 'PP';
 
@@ -60,6 +54,56 @@ The results are uniformly distributed, unbiased, and unpredictable unless
 you know the seed. The algorithm was published by Bob Jenkins in the late
 90s and despite the best efforts of many security researchers, no feasible
 attacks have been found to date.
+
+=head2 USAGE WARNING
+
+There was no method supplied to provide the initial seed data by the author.
+On his web site, Bob Jenkins writes:
+
+  Seeding a random number generator is essentially the same problem as
+  encrypting the seed with a block cipher.
+
+In the same spirit, by default, this module does not seed the algorithm at
+all -- it simply fills the state with zeroes -- if no seed is provided.
+The idea is to remind users that selecting good seed data for their purpose
+is important, and for the module to conveniently set it to something like
+C<localtime> behind-the-scenes hurts users in the long run, since they don't
+understand the limitations of doing so.
+
+The type of seed you might want to use depends entirely on the purpose of
+using this algorithm in your program in the first place. Here are some
+possible seeding methods:
+
+=over
+
+=item 1 Math::TrulyRandom
+
+The L<Math::TrulyRandom> module provides a way of obtaining truly random
+data by using timing interrupts. This is probably one of the better ways
+to seed the algorithm.
+
+=item 2 /dev/random
+
+Using the system random device is, in principle, the best idea, since it
+gathers entropy from various sources including interrupt timing, other
+device interrupts, etc. However, it's not portable to anything other than
+Unix-like platforms, and might not produce good data on some systems.
+
+=item 3 localtime()
+
+This works for basic things like simulations, but results in not-so-random
+output, especially if you create new instances quickly (as the seeds would
+be the same within per-second resolution).
+
+=item 4 Time::HiRes
+
+In theory, using L<Time::HiRes> is the same as option (2), but you get a
+higher resolution time so you're less likely to have the same seed twice.
+Note that you need to transform the output into an integer somehow, perhaps
+by taking the least significant bits or using a hash function. This would
+be less prone to duplicate instances, but it's still not ideal.
+
+=back
 
 =head1 SYNOPSIS
 
@@ -269,8 +313,7 @@ maintainer noted above.
 If you have a bug report or feature request, please file them on the CPAN
 Request Tracker at L<http://rt.cpan.org>. If you are able to submit your bug
 report in the form of failing unit tests, you are B<strongly> encouraged to do
-so. Regular bug reports are always accepted and appreciated via the CPAN bug
-tracker.
+so.
 
 =head1 SEE ALSO
 
@@ -296,43 +339,37 @@ There is no method that allows re-seeding of algorithms. This is not really
 necessary because one can simply call C<new> again with the new seed data
 periodically.
 
-=item *
-
-There was no method supplied to provide the initial seed data. On his web
-site, Bob Jenkins writes:
-
-  Seeding a random number generator is essentially the same problem as
-  encrypting the seed with a block cipher.
-
 But he also provides a simple workaround:
 
   As ISAAC is intended to be a secure cipher, if you want to reseed it,
   one way is to use some other cipher to seed some initial version of ISAAC,
   then use ISAAC's output as a seed for other instances of ISAAC whenever
-  they need to be reseeded. 
+  they need to be reseeded.
 
 =item *
 
-There is no way to clone a PRNG instance. I'm not sure why this is might even
-be necessary or useful. File a bug report with an explanation why and I'll
-consider adding it to the next release.
+There is no way to clone a PRNG instance. I'm not sure why this is might
+even be necessary or useful. File a bug report with an explanation why and
+I'll consider adding it to the next release.
 
 =back
 
+=head1 QUALITY ASSURANCE METRICS
+
+=head2 TEST COVERAGE
+
+  ----------------------- ------ ------ ------ ------ ------ ------
+  File                     stmt   bran   cond   sub    pod   total
+  ----------------------- ------ ------ ------ ------ ------ ------
+  Math/Random/ISAAC.pm    100.0  100.0  n/a    100.0  100.0  100.0
+  Math/Random/ISAAC/PP.pm 100.0  100.0  n/a    100.0  100.0  100.0
+  Total                   100.0  100.0  n/a    100.0  100.0  100.0
+
 =head1 LICENSE
 
-Copyleft 2009 by Jonathan Yu <frequency@cpan.org>. All rights reversed.
-
-I, the copyright holder of this package, hereby release the entire contents
-therein into the public domain. This applies worldwide, to the extent that
-it is permissible by law.
-
-In case this is not legally possible, I grant any entity the right to use
-this work for any purpose, without any conditions, unless such conditions
-are required by law.
-
-The full details of this can be found in the B<LICENSE> file included in
-this package.
+In a perfect world, I could just say that this package and all of the code
+it contains is Public Domain. It's a bit more complicated than that; you'll
+have to read the included F<LICENSE> file to get the full details.
 
 =head1 DISCLAIMER OF WARRANTY
 

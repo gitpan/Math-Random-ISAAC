@@ -1,3 +1,93 @@
+2009-07-25  Jonathan Yu <frequency@cpan.org>
+
+	Slight POD change
+
+2009-07-25  Jonathan Yu <frequency@cpan.org>
+
+	POD fixes
+
+2009-07-25  Jonathan Yu <frequency@cpan.org>
+
+	No longer test Perl::Critic during AUTOMATED_TESTING, only RELEASE_TESTING. Thanks to Elliot Shank for the discussion in a private mail.
+
+2009-07-25  Jonathan Yu <frequency@cpan.org>
+
+	Math::Random::ISAAC::PP set back to version 1.0.4
+	Math::Random::ISAAC set back to version 1.0.5
+	(Last version released via CPAN was 1.0.4 of the package)
+
+2009-07-25  Jonathan Yu <frequency@cpan.org>
+
+	- Changed critic.rc to ignore PodSpelling policy (fixes a bug in Debian, BTS#538115 -- when Pod::Spell and other dependencies are installed)
+
+2009-07-25  Jonathan Yu <frequency@cpan.org>
+
+	COPYRIGHT AND LICENSE -> LICENSE in POD
+
+2009-07-25  Jonathan Yu <frequency@cpan.org>
+
+	- No more versioned dependency on version.pm
+	- Updated Perl::Critic test
+
+2009-07-25  Jonathan Yu <frequency@cpan.org>
+
+	Overhaul test scripts, remove author tests from Recommends (Alias' journal #5375)
+
+2009-07-22  Jonathan Yu <frequency@cpan.org>
+
+	Update LICENSE and README to a smaller format. Clarify POD. No longer generates a readme using pod2text
+
+2009-07-22  Jonathan Yu <frequency@cpan.org>
+
+	All the copyrights now reference the main file, to reduce the number of things that need to be updated in case the years are updated
+
+2009-07-22  Jonathan Yu <frequency@cpan.org>
+
+	Fixed the copyright statement in LICENSE
+
+2009-07-22  Jonathan Yu <frequency@cpan.org>
+
+	- Removed CAVEATS from README
+	- Updated copyright statements
+
+2009-07-22  Jonathan Yu <frequency@cpan.org>
+
+	- Bumped version to 1.0.6
+	- Require Internet (TEST_INTERNET) to do the signature test, since it tries to download the key from a keyserver
+
+2009-07-22  Jonathan Yu <frequency@cpan.org>
+
+	Make it clearer in POD that there is no default seeding mechanism
+
+2009-06-14  Jonathan Yu <frequency@cpan.org>
+
+	No longer enforce "one dot only" in filenames. This breaks compatibility with OpenVMS.
+
+2009-06-14  Jonathan Yu <frequency@cpan.org>
+
+	New perlcriticrc
+
+2009-06-10  Jonathan Yu <frequency@cpan.org>
+
+	Very minor change to the license header
+
+2009-05-13  Jonathan Yu <frequency@cpan.org>
+
+	Updated LICENSE (removed some old text)
+
+2009-05-12  Jonathan Yu <frequency@cpan.org>
+
+	Bumped version to 1.0.5
+
+2009-05-12  Jonathan Yu <frequency@cpan.org>
+
+	- New simplified license - Public Domain (fallback on MIT, Artistic-2+, GPL-2+ only)
+	- Very minor documentation fixes
+
+2009-04-26  Jonathan Yu <frequency@cpan.org>
+
+	- Added .tmp to MANIFEST.SKIP
+
 2009-04-26  Jonathan Yu <frequency@cpan.org>
 
 	- Updated version to 1.0.4

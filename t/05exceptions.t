@@ -3,13 +3,7 @@
 # t/05exceptions.t
 #  Tests fast errors produced with obvious mistakes
 #
-# By Jonathan Yu <frequency@cpan.org>, 2009. All rights reversed.
-#
-# $Id: 05exceptions.t 5758 2009-03-25 20:59:40Z FREQUENCY@cpan.org $
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: 05exceptions.t 8166 2009-07-22 19:54:15Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;

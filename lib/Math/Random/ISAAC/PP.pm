@@ -1,13 +1,7 @@
 # Math::Random::ISAAC::PP
 #  A Pure Perl port of the ISAAC Pseudo-Random Number Generator
 #
-# $Id: PP.pm 6696 2009-04-26 23:27:08Z FREQUENCY@cpan.org $
-#
-# By Jonathan Yu <frequency@cpan.org>, 2009. All rights reversed.
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: PP.pm 8208 2009-07-25 19:15:27Z FREQUENCY@cpan.org $
 
 package Math::Random::ISAAC::PP;
 
@@ -21,7 +15,7 @@ Math::Random::ISAAC::PP - Pure Perl port of the ISAAC PRNG Algorithm
 
 =head1 VERSION
 
-Version 1.0.4 ($Id: PP.pm 6696 2009-04-26 23:27:08Z FREQUENCY@cpan.org $)
+Version 1.0.4 ($Id: PP.pm 8208 2009-07-25 19:15:27Z FREQUENCY@cpan.org $)
 
 =cut
 
@@ -373,18 +367,7 @@ distribution. For more information, see L<Math::Random::ISAAC>'s perldoc.
 
 =head1 LICENSE
 
-Copyleft 2009 by Jonathan Yu <frequency@cpan.org>. All rights reversed.
-
-I, the copyright holder of this package, hereby release the entire contents
-therein into the public domain. This applies worldwide, to the extent that
-it is permissible by law.
-
-In case this is not legally possible, I grant any entity the right to use
-this work for any purpose, without any conditions, unless such conditions
-are required by law.
-
-The full details of this can be found in the B<LICENSE> file included in
-this package.
+This has the same copyright and licensing terms as L<Math::Random::ISAAC>.
 
 =head1 DISCLAIMER OF WARRANTY
 

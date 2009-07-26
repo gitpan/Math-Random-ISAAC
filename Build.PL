@@ -3,7 +3,7 @@
 # Build.PL
 #  Script to build and install this distribution
 #
-# $Id: Build.PL 5759 2009-03-25 21:33:58Z FREQUENCY@cpan.org $
+# $Id: Build.PL 8201 2009-07-25 17:22:04Z FREQUENCY@cpan.org $
 #
 # This package and its contents are released by the author into the
 # Public Domain, to the full extent permissible by law. For additional
@@ -20,7 +20,7 @@ my $builder = Module::Build->new(
   dist_author           => 'Jonathan Yu <frequency@cpan.org>',
   dist_version_from     => 'lib/Math/Random/ISAAC.pm',
   dynamic_config        => 0,
-  create_readme         => 1,
+  create_readme         => 0,
   recursive_test_files  => 1,
   sign                  => 1,
   create_packlist       => 1,
@@ -33,7 +33,7 @@ my $builder = Module::Build->new(
 
     # Pragmatic and special modules
     'Carp'              => 1.04,
-    'version'           => 0.76,
+    'version'           => 0,
     'warnings'          => 0,
     'strict'            => 0,
     'integer'           => 0,
@@ -48,21 +48,6 @@ my $builder = Module::Build->new(
   recommends => {
     # The XS version of this module
     'Math::Random::ISAAC::XS'       => 0,
-
-    # Author tests
-    'Test::Perl::Critic'            => 1.01,
-    'Perl::Critic'                  => 1.096,
-    'Test::YAML::Meta'              => 0.11,
-    'Test::Kwalitee'                => 1.01,
-    'Test::Signature'               => 1.10,
-    'Test::Pod'                     => 1.14,
-    'Test::Pod::Coverage'           => 1.04,
-    'Test::Portability::Files'      => 0.05,
-    'Test::MinimumVersion'          => 0.008,
-    'Test::LeakTrace'               => 0.07,
-    'Statistics::Test::RandomWalk'  => 0,
-    'Test::Without::Module'         => 0.17,
-    'Test::DistManifest'            => 1.001002,
   },
   conflicts => {
   },
