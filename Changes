@@ -1,226 +1,58 @@
-2009-07-25  Jonathan Yu <frequency@cpan.org>
-
-	Slight POD change
-
-2009-07-25  Jonathan Yu <frequency@cpan.org>
-
-	POD fixes
-
-2009-07-25  Jonathan Yu <frequency@cpan.org>
-
-	No longer test Perl::Critic during AUTOMATED_TESTING, only RELEASE_TESTING. Thanks to Elliot Shank for the discussion in a private mail.
-
-2009-07-25  Jonathan Yu <frequency@cpan.org>
-
-	Math::Random::ISAAC::PP set back to version 1.0.4
-	Math::Random::ISAAC set back to version 1.0.5
-	(Last version released via CPAN was 1.0.4 of the package)
-
-2009-07-25  Jonathan Yu <frequency@cpan.org>
-
-	- Changed critic.rc to ignore PodSpelling policy (fixes a bug in Debian, BTS#538115 -- when Pod::Spell and other dependencies are installed)
-
-2009-07-25  Jonathan Yu <frequency@cpan.org>
-
-	COPYRIGHT AND LICENSE -> LICENSE in POD
-
-2009-07-25  Jonathan Yu <frequency@cpan.org>
-
-	- No more versioned dependency on version.pm
-	- Updated Perl::Critic test
-
-2009-07-25  Jonathan Yu <frequency@cpan.org>
-
-	Overhaul test scripts, remove author tests from Recommends (Alias' journal #5375)
-
-2009-07-22  Jonathan Yu <frequency@cpan.org>
-
-	Update LICENSE and README to a smaller format. Clarify POD. No longer generates a readme using pod2text
-
-2009-07-22  Jonathan Yu <frequency@cpan.org>
-
-	All the copyrights now reference the main file, to reduce the number of things that need to be updated in case the years are updated
-
-2009-07-22  Jonathan Yu <frequency@cpan.org>
-
-	Fixed the copyright statement in LICENSE
-
-2009-07-22  Jonathan Yu <frequency@cpan.org>
-
-	- Removed CAVEATS from README
-	- Updated copyright statements
-
-2009-07-22  Jonathan Yu <frequency@cpan.org>
-
-	- Bumped version to 1.0.6
-	- Require Internet (TEST_INTERNET) to do the signature test, since it tries to download the key from a keyserver
-
-2009-07-22  Jonathan Yu <frequency@cpan.org>
-
-	Make it clearer in POD that there is no default seeding mechanism
-
-2009-06-14  Jonathan Yu <frequency@cpan.org>
-
-	No longer enforce "one dot only" in filenames. This breaks compatibility with OpenVMS.
-
-2009-06-14  Jonathan Yu <frequency@cpan.org>
-
-	New perlcriticrc
-
-2009-06-10  Jonathan Yu <frequency@cpan.org>
-
-	Very minor change to the license header
-
-2009-05-13  Jonathan Yu <frequency@cpan.org>
-
-	Updated LICENSE (removed some old text)
-
-2009-05-12  Jonathan Yu <frequency@cpan.org>
-
-	Bumped version to 1.0.5
-
-2009-05-12  Jonathan Yu <frequency@cpan.org>
-
-	- New simplified license - Public Domain (fallback on MIT, Artistic-2+, GPL-2+ only)
-	- Very minor documentation fixes
-
-2009-04-26  Jonathan Yu <frequency@cpan.org>
-
-	- Added .tmp to MANIFEST.SKIP
-
-2009-04-26  Jonathan Yu <frequency@cpan.org>
-
-	- Updated version to 1.0.4
-
-2009-04-26  Jonathan Yu <frequency@cpan.org>
-
-	- Added some more tests for fallback functionality; I believe having 'use' for ISAAC meant that it would be put in a BEGIN{} block, which means selection happens before Test::Without::Module is even loaded (this was fixed by changing to require in an eval)
-	-> Added a test to ensure the module was compiled/loaded, then check if $Math::Random::ISAAC::DRIVER is defined first
-
-2009-04-24  Jonathan Yu <frequency@cpan.org>
-
-	Added Build.bat to MANIFEST.SKIP for Win32 builds...
-
-2009-04-23  Jonathan Yu <frequency@cpan.org>
-
-	One last oopsie, added a wrong examples file
-
-2009-04-23  Jonathan Yu <frequency@cpan.org>
-
-	Updated MANIFEST file
-
-2009-04-23  Jonathan Yu <frequency@cpan.org>
-
-	Updated version information
-
-2009-04-23  Jonathan Yu <frequency@cpan.org>
-
-	- Rewrote docs a bit
-	- Added example scripts
-	- Removed Pod::Usage dependency
-
-2009-04-10  Jonathan Yu <frequency@cpan.org>
-
-	Updated MANIFEST file
-
-2009-04-10  Jonathan Yu <frequency@cpan.org>
-
-	- A few trivial changes with commenting and formatting.
-	- Moved calls to $self->{randa} to outside the for loop for performance
-
-2009-04-06  Jonathan Yu <frequency@cpan.org>
-
-	- Changed pod-coverage to test all files
-	- Bumped version number to 1.0.2
-	- Moved memory test to an 02* test, because 01compile needs to be successful first
-
-2009-04-04  Jonathan Yu <frequency@cpan.org>
-
-	- Updated version numbers for META.yml and Math::Random::ISAAC
-	- Fixed the PurePerl algorithm to mask out high bits for 64-bit systems, so as to be portable
-
-2009-04-03  Jonathan Yu <frequency@cpan.org>
-
-	swapped $got and $expected values for is()
-
-2009-04-03  Jonathan Yu <frequency@cpan.org>
-
-	Changed ok() to is() to provide more meaningful output
-
-2009-03-25  Jonathan Yu <frequency@cpan.org>
-
-	- Changed version number to 1.0 for release
-	- Updated META.yml and Build.PL with prerequisites
-
-2009-03-25  Jonathan Yu <frequency@cpan.org>
-
-	- Added svn:keywords for *t files
-	- Updated MANIFEST file
-
-2009-03-25  Jonathan Yu <frequency@cpan.org>
-
-	- Added stub POD documentation for PP.pm
-	- Added a test for Math::Random::ISAAC falling back (ie, ignoring XS even if installed)
-	- Added tests for exceptions
-	- Coverage is almost 100% now :-)
-
-	---------------------------- ------ ------ ------ ------ ------ ------ ------
-	File                           stmt   bran   cond    sub    pod   time  total
-	---------------------------- ------ ------ ------ ------ ------ ------ ------
-	.../lib/Math/Random/ISAAC.pm   96.2   87.5    n/a  100.0  100.0    0.6   95.5
-	...b/Math/Random/ISAAC/PP.pm  100.0  100.0    n/a  100.0  100.0   99.4  100.0
-	Total                          99.5   90.0    n/a  100.0  100.0  100.0   99.2
-
-2009-03-25  Jonathan Yu <frequency@cpan.org>
-
-	- Added a statement of purpose, corrected a POD mistake
-	- Added a README file
-	- Skip the t/01memory.t memory leak test if running with Devel::Cover
-
-2009-03-25  Jonathan Yu <frequency@cpan.org>
-
-	- Added test for memory leak detection
-	- Added test to ensure generated distribution is uniform
-	- Updated META.yml, MANIFEST and Build.PL parameters accordingly
-
-2009-03-24  Jonathan Yu <frequency@cpan.org>
-
-	Test that the distribution produced is uniform on [0,1]. Uses Statistics::Test::RandomWalk
-
-2009-03-21  Jonathan Yu <frequency@cpan.org>
-
-	- Modified pod coverage test (added a test plan)
-	- Added back generated_by (though I end up tweaking it by hand due to the version problem)
-
-2009-03-20  Jonathan Yu <frequency@cpan.org>
-
-	- Disable warning about functions that look like builtins (rand, irand), since they are methods
-	- Added stub POD for DESCRIPTION, SUPPORT in PP.pm
-	- Changed variable names because $a, $b are reserved by 'sort'
-
-2009-03-20  Jonathan Yu <frequency@cpan.org>
-
-	- Added lots of documentation
-	- Clarified the LICENSE - in particular, removed the (C) symbol to remove ambiguity
-
-2009-03-20  Jonathan Yu <frequency@cpan.org>
-
-	- Added a MANIFEST file
-	- Added strict/warnings to ISAAC.pm
-	- Added a version and some comments for PP.pm
-
-2009-03-20  Jonathan Yu <frequency@cpan.org>
-
-	Update Build.PL (I was being lazy and inadvertently copied and pasted it without editing)
-
-2009-03-20  Jonathan Yu <frequency@cpan.org>
-
-	- Initial commit of the PurePerl interface (Math::Random::ISAAC and Math::Random::ISAAC::PP)
-
-2009-03-17  Jonathan Yu <frequency@cpan.org>
-
-	- Added Math::Random::ISAAC for the ISAAC Pure-Perl distribution
-
-;; Local Variables:
-;; coding: utf-8
-;; End:
+1.001 - 17 Aug 2009 - Jonathan Yu <frequency@cpan.org>
+
+  + Remove generated files from the repository
+  + Use a simple string version, per David Golden's article:
+    http://www.dagolden.com/index.php/369/version-numbers-should-be-boring/
+  + No longer use Perl::Critic to test
+
+1.0.5 - 25 Jul 2009 - Jonathan Yu <frequency@cpan.org>
+
+  + No longer test Perl::Critic during AUTOMATED_TESTING,
+    only RELEASE_TESTING. Thanks to Elliot Shank for the
+    discussion in a private mail.
+  + Changed critic.rc to ignore PodSpelling policy (fixes a
+    bug in Debian, BTS#538115 -- when Pod::Spell and other
+    dependencies are installed)
+  + COPYRIGHT AND LICENSE -> LICENSE in POD
+  + No more versioned dependency on version.pm
+  + Overhaul test scripts, remove author tests from
+    Recommends (Alias' journal #5375)
+  + Update LICENSE and README to a smaller format. Clarify
+    POD. No longer generates a readme using pod2text
+  + All the copyrights now reference the main file, to
+    reduce the number of things that need to be updated in
+    case the years are updated
+  + Require Internet (TEST_INTERNET) to do the signature
+    test, since it tries to download the key from a keyserver
+  + Make it clearer in POD that there is no default seeding
+    mechanism
+  + No longer enforce "one dot only" in filenames. This
+    breaks compatibility with OpenVMS.
+  + New simplified license - Public Domain (fallback on MIT,
+    Artistic-2+, GPL-2+ only)
+
+1.0.4 - 26 Apr 2009 - Jonathan Yu <frequency@cpan.org>
+
+  + Added some more tests for fallback functionality; I
+    believe having 'use' for ISAAC meant that it would be put
+    in a BEGIN{} block, which means selection happens before
+    Test::Without::Module is even loaded (this was fixed by
+    changing to require in an eval)
+  + Added a test to ensure the module was compiled/loaded, then
+    check if $Math::Random::ISAAC::DRIVER is defined first
+  + Added Build.bat to MANIFEST.SKIP for Win32 builds...
+
+1.0.3 - 23 Apr 2009 - Jonathan Yu <frequency@cpan.org>
+
+  + Added example scripts
+  + Move calls to $self->{randa} outside the for loop to increase
+    performance
+
+1.0.1 - 06 Apr 2009 - Jonathan Yu <frequency@cpan.org>
+
+  + Fixed the PurePerl algorithm to mask out high bits for
+    64-bit systems, so as to be portable
+
+1.0 - 25 Mar 2009 - Jonathan Yu <frequency@cpan.org>
+
+  + Initial release

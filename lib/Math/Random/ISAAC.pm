@@ -2,7 +2,7 @@
 #  An interface that automagically selects the XS or Pure Perl port of the
 #  ISAAC Pseudo-Random Number Generator
 #
-# $Id: ISAAC.pm 8224 2009-07-26 00:14:03Z FREQUENCY@cpan.org $
+# $Id: ISAAC.pm 8611 2009-08-18 00:19:18Z FREQUENCY@cpan.org $
 
 package Math::Random::ISAAC;
 
@@ -16,11 +16,12 @@ Math::Random::ISAAC - Perl interface to the ISAAC PRNG Algorithm
 
 =head1 VERSION
 
-Version 1.0.5 ($Id: ISAAC.pm 8224 2009-07-26 00:14:03Z FREQUENCY@cpan.org $)
+Version 1.001 ($Id: ISAAC.pm 8611 2009-08-18 00:19:18Z FREQUENCY@cpan.org $)
 
 =cut
 
-use version; our $VERSION = qv('1.0.5');
+our $VERSION = '1.001';
+$VERSION = eval $VERSION;
 
 our $DRIVER = 'PP';
 

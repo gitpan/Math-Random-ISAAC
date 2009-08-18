@@ -1,7 +1,7 @@
 # Math::Random::ISAAC::PP
 #  A Pure Perl port of the ISAAC Pseudo-Random Number Generator
 #
-# $Id: PP.pm 8208 2009-07-25 19:15:27Z FREQUENCY@cpan.org $
+# $Id: PP.pm 8611 2009-08-18 00:19:18Z FREQUENCY@cpan.org $
 
 package Math::Random::ISAAC::PP;
 
@@ -15,11 +15,12 @@ Math::Random::ISAAC::PP - Pure Perl port of the ISAAC PRNG Algorithm
 
 =head1 VERSION
 
-Version 1.0.4 ($Id: PP.pm 8208 2009-07-25 19:15:27Z FREQUENCY@cpan.org $)
+Version 1.001 ($Id: PP.pm 8611 2009-08-18 00:19:18Z FREQUENCY@cpan.org $)
 
 =cut
 
-use version; our $VERSION = qv('1.0.4');
+our $VERSION = '1.001';
+$VERSION = eval $VERSION;
 
 =head1 SYNOPSIS
 

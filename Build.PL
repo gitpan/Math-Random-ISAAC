@@ -3,7 +3,7 @@
 # Build.PL
 #  Script to build and install this distribution
 #
-# $Id: Build.PL 8201 2009-07-25 17:22:04Z FREQUENCY@cpan.org $
+# $Id: Build.PL 8611 2009-08-18 00:19:18Z FREQUENCY@cpan.org $
 #
 # This package and its contents are released by the author into the
 # Public Domain, to the full extent permissible by law. For additional
@@ -33,7 +33,6 @@ my $builder = Module::Build->new(
 
     # Pragmatic and special modules
     'Carp'              => 1.04,
-    'version'           => 0,
     'warnings'          => 0,
     'strict'            => 0,
     'integer'           => 0,
