@@ -1,7 +1,7 @@
 # Math::Random::ISAAC::PP
 #  A Pure Perl port of the ISAAC Pseudo-Random Number Generator
 #
-# $Id: PP.pm 8611 2009-08-18 00:19:18Z FREQUENCY@cpan.org $
+# $Id: PP.pm 10353 2009-12-03 13:58:39Z FREQUENCY@cpan.org $
 
 package Math::Random::ISAAC::PP;
 
@@ -15,11 +15,11 @@ Math::Random::ISAAC::PP - Pure Perl port of the ISAAC PRNG Algorithm
 
 =head1 VERSION
 
-Version 1.001 ($Id: PP.pm 8611 2009-08-18 00:19:18Z FREQUENCY@cpan.org $)
+Version 1.002 ($Id: PP.pm 10353 2009-12-03 13:58:39Z FREQUENCY@cpan.org $)
 
 =cut
 
-our $VERSION = '1.001';
+our $VERSION = '1.002';
 $VERSION = eval $VERSION;
 
 =head1 SYNOPSIS
@@ -61,7 +61,9 @@ See L<Math::Random::ISAAC> for the full description.
 
 =head1 METHODS
 
-=head2 Math::Random::ISAAC::PP->new( @seeds )
+=head2 new
+
+  Math::Random::ISAAC::PP->new( @seeds )
 
 Implements the interface as specified in C<Math::Random::ISAAC>
 
@@ -97,7 +99,9 @@ sub new {
   return $self;
 }
 
-=head2 $rng->rand()
+=head2 rand
+
+  $rng->rand()
 
 Implements the interface as specified in C<Math::Random::ISAAC>
 
@@ -114,7 +118,9 @@ sub rand {
   return ($self->irand() / (2**32-1));
 }
 
-=head2 $rng->irand()
+=head2 irand
+
+  $rng->irand()
 
 Implements the interface as specified in C<Math::Random::ISAAC>
 
@@ -355,7 +361,7 @@ sub _randinit
 
 =head1 AUTHOR
 
-Jonathan Yu E<lt>frequency@cpan.orgE<gt>
+Jonathan Yu E<lt>jawnsy@cpan.orgE<gt>
 
 =head1 SEE ALSO
 

@@ -1,9 +1,9 @@
 #!/usr/bin/perl -T
 
-# t/04fallback.t
+# t/05fallback.t
 #  Tests use of the Pure Perl interface
 #
-# $Id: 04fallback.t 8166 2009-07-22 19:54:15Z FREQUENCY@cpan.org $
+# $Id: 05fallback.t 10350 2009-12-03 02:24:23Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;
@@ -39,6 +39,6 @@ my $rng = Math::Random::ISAAC->new();
 isa_ok($rng, 'Math::Random::ISAAC');
 
 ok(defined $Math::Random::ISAAC::DRIVER, 'The DRIVER is defined');
-ok($Math::Random::ISAAC::DRIVER eq 'PP', 'The Pure Perl port is loaded');
+is($Math::Random::ISAAC::DRIVER, 'PP', 'Pure Perl port is loaded');
 ok($rng->irand() > 0, 'Generate first integer in sequence');
 ok($rng->rand()  > 0, 'Generate second number in sequence');

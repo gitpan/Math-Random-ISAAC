@@ -1,9 +1,9 @@
 #!/usr/bin/perl -T
 
-# t/02sequence.t
+# t/03sequence.t
 #  Checks that the generated sequence matches the reference
 #
-# $Id: 02sequence.t 8166 2009-07-22 19:54:15Z FREQUENCY@cpan.org $
+# $Id: 03sequence.t 8614 2009-08-18 03:19:57Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;

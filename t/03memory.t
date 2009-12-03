@@ -1,9 +1,9 @@
 #!/usr/bin/perl -T
 
-# t/01memory.t
+# t/03memory.t
 #  Tests that there are no memory leaks
 #
-# $Id: 02memory.t 8166 2009-07-22 19:54:15Z FREQUENCY@cpan.org $
+# $Id: 03memory.t 8614 2009-08-18 03:19:57Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;

@@ -3,11 +3,7 @@
 # Build.PL
 #  Script to build and install this distribution
 #
-# $Id: Build.PL 8611 2009-08-18 00:19:18Z FREQUENCY@cpan.org $
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: Build.PL 9526 2009-10-04 04:23:46Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;
@@ -17,7 +13,7 @@ use Module::Build;
 my $builder = Module::Build->new(
   module_name           => 'Math::Random::ISAAC',
   license               => 'unrestricted',
-  dist_author           => 'Jonathan Yu <frequency@cpan.org>',
+  dist_author           => 'Jonathan Yu <jawnsy@cpan.org>',
   dist_version_from     => 'lib/Math/Random/ISAAC.pm',
   dynamic_config        => 0,
   create_readme         => 0,
@@ -30,12 +26,6 @@ my $builder = Module::Build->new(
 
   requires => {
     'perl'              => 5.006,
-
-    # Pragmatic and special modules
-    'Carp'              => 1.04,
-    'warnings'          => 0,
-    'strict'            => 0,
-    'integer'           => 0,
 
     # The tests are based on Test::More
     'Test::More'        => 0.62,
