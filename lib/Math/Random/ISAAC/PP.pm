@@ -1,73 +1,13 @@
-# Math::Random::ISAAC::PP
-#  A Pure Perl port of the ISAAC Pseudo-Random Number Generator
-#
-# $Id: PP.pm 10353 2009-12-03 13:58:39Z FREQUENCY@cpan.org $
-
 package Math::Random::ISAAC::PP;
+BEGIN {
+  $Math::Random::ISAAC::PP::VERSION = '1.003';
+}
+# ABSTRACT: Pure Perl port of the ISAAC PRNG algorithm
 
 use strict;
 use warnings;
 use Carp ();
 
-=head1 NAME
-
-Math::Random::ISAAC::PP - Pure Perl port of the ISAAC PRNG Algorithm
-
-=head1 VERSION
-
-Version 1.002 ($Id: PP.pm 10353 2009-12-03 13:58:39Z FREQUENCY@cpan.org $)
-
-=cut
-
-our $VERSION = '1.002';
-$VERSION = eval $VERSION;
-
-=head1 SYNOPSIS
-
-This module implements the same interface as C<Math::Random::ISAAC> and can be
-used as a drop-in replacement. However, it is recommended that you let the
-C<Math::Random::ISAAC> module decide whether to use the PurePerl or XS version
-of this module, instead of choosing manually.
-
-Selecting the backend to use manually really only has two uses:
-
-=over
-
-=item *
-
-If you are trying to avoid the small overhead incurred with dispatching method
-calls to the appropriate backend modules.
-
-=item *
-
-If you are testing the module for performance and wish to explicitly decide
-which module you would like to use.
-
-=back
-
-Example code:
-
-  # With Math::Random::ISAAC
-  my $rng = Math::Random::ISAAC->new(time);
-  my $rand = $rng->rand();
-
-  # With Math::Random::ISAAC::PP
-  my $rng = Math::Random::ISAAC::PP->new(time);
-  my $rand = $rng->rand();
-
-=head1 DESCRIPTION
-
-See L<Math::Random::ISAAC> for the full description.
-
-=head1 METHODS
-
-=head2 new
-
-  Math::Random::ISAAC::PP->new( @seeds )
-
-Implements the interface as specified in C<Math::Random::ISAAC>
-
-=cut
 
 sub new {
   my ($class, @seed) = @_;
@@ -99,13 +39,6 @@ sub new {
   return $self;
 }
 
-=head2 rand
-
-  $rng->rand()
-
-Implements the interface as specified in C<Math::Random::ISAAC>
-
-=cut
 
 # This package should have an interface similar to the builtin Perl
 # random number routines; these are methods, not functions, so they
@@ -118,13 +51,6 @@ sub rand {
   return ($self->irand() / (2**32-1));
 }
 
-=head2 irand
-
-  $rng->irand()
-
-Implements the interface as specified in C<Math::Random::ISAAC>
-
-=cut
 
 sub irand {
   my ($self) = @_;
@@ -359,24 +285,104 @@ sub _randinit
   return;
 }
 
-=head1 AUTHOR
 
-Jonathan Yu E<lt>jawnsy@cpan.orgE<gt>
+1;
+
+__END__
+=pod
+
+=head1 NAME
+
+Math::Random::ISAAC::PP - Pure Perl port of the ISAAC PRNG algorithm
+
+=head1 VERSION
+
+version 1.003
+
+=head1 SYNOPSIS
+
+This module implements the same interface as C<Math::Random::ISAAC> and can be
+used as a drop-in replacement. However, it is recommended that you let the
+C<Math::Random::ISAAC> module decide whether to use the PurePerl or XS version
+of this module, instead of choosing manually.
+
+Selecting the backend to use manually really only has two uses:
+
+=over
+
+=item *
+
+If you are trying to avoid the small overhead incurred with dispatching method
+calls to the appropriate backend modules.
+
+=item *
+
+If you are testing the module for performance and wish to explicitly decide
+which module you would like to use.
+
+=back
+
+Example code:
+
+  # With Math::Random::ISAAC
+  my $rng = Math::Random::ISAAC->new(time);
+  my $rand = $rng->rand();
+
+  # With Math::Random::ISAAC::PP
+  my $rng = Math::Random::ISAAC::PP->new(time);
+  my $rand = $rng->rand();
+
+=head1 DESCRIPTION
+
+See L<Math::Random::ISAAC> for the full description.
+
+=head1 METHODS
+
+=head2 new
+
+  Math::Random::ISAAC::PP->new( @seeds )
+
+Implements the interface as specified in C<Math::Random::ISAAC>
+
+=head2 rand
+
+  $rng->rand()
+
+Implements the interface as specified in C<Math::Random::ISAAC>
+
+=head2 irand
+
+  $rng->irand()
+
+Implements the interface as specified in C<Math::Random::ISAAC>
 
 =head1 SEE ALSO
 
 L<Math::Random::ISAAC>
 
-=head1 SUPPORT
+=head1 BUGS
 
-Please file bugs for this module under the C<Math::Random::ISAAC>
-distribution. For more information, see L<Math::Random::ISAAC>'s perldoc.
+Please report any bugs or feature requests on the bugtracker website
+http://rt.cpan.org/NoAuth/Bugs.html?Dist=Math-Random-ISAAC
 
-=head1 LICENSE
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
 
-This has the same copyright and licensing terms as L<Math::Random::ISAAC>.
+=head1 AUTHOR
 
-=head1 DISCLAIMER OF WARRANTY
+Jonathan Yu <jawnsy@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+Legally speaking, this package and its contents are:
+
+  Copyright (c) 2011 by Jonathan Yu <jawnsy@cpan.org>.
+
+But this is really just a legal technicality that allows the author to
+offer this package under the public domain and also a variety of licensing
+options. For all intents and purposes, this is public domain software,
+which means you can do whatever you want with it.
 
 The software is provided "AS IS", without warranty of any kind, express or
 implied, including but not limited to the warranties of merchantability,
@@ -388,4 +394,3 @@ the software.
 
 =cut
 
-1;

@@ -1,9 +1,6 @@
 #!/usr/bin/perl -T
 
-# t/05fallback.t
-#  Tests use of the Pure Perl interface
-#
-# $Id: 05fallback.t 10350 2009-12-03 02:24:23Z FREQUENCY@cpan.org $
+# Tests use of the Pure Perl interface
 
 use strict;
 use warnings;
@@ -15,9 +12,11 @@ require Test::NoWarnings;
 
 eval {
   require Test::Without::Module;
+  require Math::Random::ISAAC::XS;
 };
 if ($@) {
-  plan skip_all => 'Test::Without::Module required to test fallback ability';
+  plan skip_all => 'Test::Without::Module and Math::Random::ISAAC::XS ' .
+    'required to test fallback ability';
 }
 
 plan tests => 7;

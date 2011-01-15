@@ -4,7 +4,7 @@
 #  Compare the ISAAC RNG implementations between each other, and between
 #  other algorithms.
 #
-# $Id: benchmark.pl 9526 2009-10-04 04:23:46Z FREQUENCY@cpan.org $
+# $Id$
 
 use strict;
 use warnings;
@@ -24,7 +24,7 @@ benchmark.pl - Test performance of various random number generators
 
 =head1 VERSION
 
-Version 1.0 ($Id: benchmark.pl 9526 2009-10-04 04:23:46Z FREQUENCY@cpan.org $)
+Version 1.0 ($Id$)
 
 =cut
 

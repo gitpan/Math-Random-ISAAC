@@ -1,9 +1,6 @@
 #!/usr/bin/perl -T
 
-# t/06exceptions.t
-#  Tests fast errors produced with obvious mistakes
-#
-# $Id: 06exceptions.t 8614 2009-08-18 03:19:57Z FREQUENCY@cpan.org $
+# Tests exceptions raised with obvious mistakes
 
 use strict;
 use warnings;

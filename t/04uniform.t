@@ -1,9 +1,6 @@
 #!/usr/bin/perl -T
 
-# t/04uniform.t
-#  Checks that the generated sequence is a uniform distribution
-#
-# $Id: 04uniform.t 8614 2009-08-18 03:19:57Z FREQUENCY@cpan.org $
+# Check the generated sequence for uniformity
 
 use strict;
 use warnings;
