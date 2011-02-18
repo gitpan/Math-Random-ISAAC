@@ -12,6 +12,7 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'Perl interface to the ISAAC PRNG algorithm',
   'AUTHOR' => 'Jonathan Yu <jawnsy@cpan.org>',
   'BUILD_REQUIRES' => {
+    'Test::More' => '0.62',
     'Test::NoWarnings' => '0.084'
   },
   'CONFIGURE_REQUIRES' => {
@@ -21,11 +22,8 @@ my %WriteMakefileArgs = (
   'EXE_FILES' => [],
   'LICENSE' => 'unrestricted',
   'NAME' => 'Math::Random::ISAAC',
-  'PREREQ_PM' => {
-    'Math::Random::ISAAC::XS' => '0',
-    'Test::More' => '0.62'
-  },
-  'VERSION' => '1.003',
+  'PREREQ_PM' => {},
+  'VERSION' => '1.004',
   'test' => {
     'TESTS' => 't/*.t'
   }

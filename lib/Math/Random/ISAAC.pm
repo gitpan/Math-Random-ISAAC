@@ -1,6 +1,6 @@
 package Math::Random::ISAAC;
 BEGIN {
-  $Math::Random::ISAAC::VERSION = '1.003';
+  $Math::Random::ISAAC::VERSION = '1.004';
 }
 # ABSTRACT: Perl interface to the ISAAC PRNG algorithm
 
@@ -77,7 +77,7 @@ Math::Random::ISAAC - Perl interface to the ISAAC PRNG algorithm
 
 =head1 VERSION
 
-version 1.003
+version 1.004
 
 =head1 SYNOPSIS
 
